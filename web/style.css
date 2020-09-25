@@ -1,0 +1,96 @@
+:root {
+    --default-border-radius: 32px;
+    --input-hover-color: lightseagreen;
+    --input-focus-color: lightskyblue;
+    --button-hover-color: lightseagreen;
+    --error-text-color: red;
+}
+body{
+    font-family: sans-serif;
+}
+.login_container {
+    
+}
+table{   
+    margin: auto;
+    padding: 16px;
+    border-radius: var(--default-border-radius);
+    background-color: gainsboro;
+    width: 100%;
+}
+.login_table {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    width: 350px;
+    margin: auto;
+    padding: 16px;
+    border-radius: var(--default-border-radius);
+    background-color: gainsboro;
+}
+.th,
+.login_table th {
+    background-color: black;
+    color: white;
+    padding: 8px;
+}
+.login_table th {
+    font-size: 20px;
+    border-radius: var(--default-border-radius);
+}
+.td,
+.login_table td {
+    text-align: center;
+    text-indent: 0%;
+    font-size: 18px;
+    padding-top: 24px;
+}
+.login_table td {
+    margin: auto;
+    text-align: left;
+    text-indent: 10%;
+    font-size: 16px;
+}
+.input,
+.login_input,
+.login_button {
+    display: block;
+    margin: auto;
+    padding: 10px;
+    width: 80%;
+    border-radius: var(--default-border-radius);
+    outline: none;
+    border: none;
+}
+.button,
+.login_button {
+    width: 10%;
+    background-color: gray;
+    font-size: 18px;
+    font-weight: bolder;
+}
+.login_button {
+    width: 60%;
+    font-size: 18px;
+}
+input:hover {
+    background-color: lightseagreen;
+}
+.input:focus,
+.login_input:focus {
+    background-color: lightskyblue;
+    text-decoration: none;
+    outline: none;
+}
+.login_text {
+    color: crimson;
+    font-weight: bold;
+}
+
+.kev_box_book_details {
+    
+}
+

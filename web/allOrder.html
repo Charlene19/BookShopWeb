@@ -6,11 +6,44 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Recap commande</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
+        
+        <!-- Premiere ligne sous l'en tete -->
+        <div>
+            <div> Vos commandes  <a href="cadeau" >Achat Cadeau</a> </div>
+        </div>
+        
+        <div> 
+            <form name="search" action="searchOrder">
+                <input type="text" name="inputOrder" value="" /><input type="submit" value="buton" name="doSearch" />
+            </form>
+        </div>
+        <div> 
+           <h3> Dernier mois</h3>  
+    
+            <br> </br>
+            <!-- Pour chaque commande afficher le nom de la commande plus son image -->
+            <li> 
+             <figure> <img src ="" alt= "" /> <!-- Positionnement image -->
+          
+            <!-- Nom du produit --> Nom du Produit <input type="submit" value="searchProd" name="doSearch" />
+            </li>    
+            
+            <h3> Six derniers mois</h3>  
+            
+            <br> </br>
+            <!-- Pour chaque commande afficher le nom de la commande plus son image -->
+            <li> 
+             <figure> <img src ="" alt= "Produit" /> <!-- Positionnement image -->
+          
+                 <!-- Nom du produit --> Nom du Produit <input type="submit" value="searchProd" name="doSearch" />
+            </li>    
+            
+        </div>
+        
     </body>
 </html>
