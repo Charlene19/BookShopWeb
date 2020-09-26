@@ -1,0 +1,97 @@
+header {
+    /*background-color: hsl(200,25%,92%);*/
+}
+
+
+a:hover {
+    color: orange;
+}
+
+.banniere {
+    display : inline-block;
+}
+
+
+.barreMenuG {
+    display: inline;
+    padding: 0 6px;
+    margin: 15px;
+    background-color: hsl(200,25%,92%);
+    float: center;
+    font-size: 25px;
+}
+
+
+.barreMenuG:hover {
+    background-color: hsl(100,15%,100%);
+}
+
+.barreMenuB {
+    display: inline;
+    padding: 0 6px;
+    text-align: center;
+}
+
+section {
+    text-align: justify;
+}
+
+a {
+	text-decoration: none;
+	font-weight: bold;
+	color: navy;
+}
+
+#logoBookshop {
+	width: 30vmin;
+	width: 20vmax;
+    margin-left: 0; 
+}
+
+nav {
+    display:table;
+    margin: 0 auto;
+}
+
+h2 {
+    padding : 35px;
+    text-decoration: underline;
+}
+
+#navMenu {
+    background-color: hsl(200,25%,92%);
+}
+
+#recherche {
+    width: 425px;
+}
+
+section {
+    margin-left: 230px;
+    margin-right: 180px;
+}
+
+.logo {
+    width: 30px;
+    
+}
+
+#menuNav {
+    display: flex;
+    align-content: space-around;
+    border-bottom-style: solid;
+    border-bottom-color: white;
+     
+}
+
+#font {
+    background-color: hsl(200,25%,92%);
+}
+
+#barreFixe {
+    position : fixed;
+}
+
+#tdr {
+    text-align: center;
+}
