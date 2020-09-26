@@ -1,9 +1,9 @@
 :root {
-    --default-border-radius: 32px;
-    --input-hover-color: lightseagreen;
+/*   --default-border-radius: 32px;
+    --input-hover-color: lightseagreen; 
     --input-focus-color: lightskyblue;
     --button-hover-color: lightseagreen;
-    --error-text-color: red;
+    --error-text-color: red; */
 }
 body{
     font-family: sans-serif;
@@ -14,7 +14,7 @@ body{
 table{   
     margin: auto;
     padding: 16px;
-    border-radius: var(--default-border-radius);
+   /* border-radius: var(--default-border-radius); */
     background-color: gainsboro;
     width: 100%;
 }
@@ -28,7 +28,7 @@ table{
     width: 350px;
     margin: auto;
     padding: 16px;
-    border-radius: var(--default-border-radius);
+   /* border-radius: var(--default-border-radius); */ 
     background-color: gainsboro;
 }
 .th,
@@ -39,7 +39,7 @@ table{
 }
 .login_table th {
     font-size: 20px;
-    border-radius: var(--default-border-radius);
+   /* border-radius: var(--default-border-radius); */
 }
 .td,
 .login_table td {
@@ -61,7 +61,7 @@ table{
     margin: auto;
     padding: 10px;
     width: 80%;
-    border-radius: var(--default-border-radius);
+    /* border-radius: var(--default-border-radius); */
     outline: none;
     border: none;
 }

@@ -1,16 +1,282 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
+    
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Bookshop - Bienvenue sur votre librairie en ligne !</title>
+        <meta name="description" content="">
+        <link rel="stylesheet" href="templatecss.css">
     </head>
+    
+    
     <body>
-        <div>TODO write content</div>
+        
+        
+       
+        <header>
+         <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+.banniere {
+    display : inline-block;
+}
+#logoBookshop {
+	width: 30vmin;
+	width: 20vmax;
+    margin-left: 0; 
+}
+</style>
+</head>
+<body>
+
+
+
+<!-- Trigger/Open The Modal -->
+
+    <ul>
+            <li class="banniere"><h1><a href=""><figure/><img src="img/imgBookShop.png" alt="Logo Bookshop" id="logoBookshop"></a></h1></li>
+            <!-- recherche rapide -->
+            <li class="banniere"><label for="recherche">Recherche</label>
+                <input type="text" id="recherche" name="recherche">
+                <button type="button">OK</button></li>
+            <li class="banniere"><a href=""><span id="barreMenuD">Panier</span></a></li>
+                    <li class="banniere"><button id="myBtn">Mon compte</button></li>
+            </ul>
+            
+            
+
+
+
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <br></br>
+    </div>
+    <div class="modal-body">
+      <table class="login_table">
+            <tr>
+                <th>Se connecter</th>
+            </tr>
+            <tr>
+                <td>
+                    Utilisateur<br />
+                    <input class="login_input" type="text" name="username" value="" />
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Mot de passe<br />
+                    <input class="login_input" type="password" name="password" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td class="login_text">
+                    Message d'erreur
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="login_button" type="submit" name="username" value="Connexion" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="modal-footer">
+        <br></br>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+            
+            
+            
+        </header>
+        
+       
+         <div id="font">   
+            <nav> <!-- Menu de sélection thématique-->
+                
+                <ul id="menuNav">
+                    <!-- <div id="gauche"> -->
+                    <li class="barreMenuG"><a href="">Littérature</a></li>
+                    <li class="barreMenuG"><a href="">Sciences Humaines</a></li>
+                    <li class="barreMenuG"><a href="">Arts</a></li>
+                    <li class="barreMenuG"><a href="">Jeunesse</a></li>
+                    <li class="barreMenuG"><a href="">BD / Manga</a></li>
+                    <!-- </div> -->
+                </ul>
+                
+            </nav>
+       
+             
+        <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                            CODE POUR LE HAUT DE PAGE
+        -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+                    
+            
+        <section id="evenement">
+            <h2>L'événement du moment</h2>
+            <a href="">Rentrée des classes 2020</a></section>
+        
+        <section id = présentation>
+            <h2>Présentation</h2>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+        </section>
+            
+            <section id = "livres tendance">
+                <h2>En tendance en ce moment</h2>
+                <ul>
+                    <li><a href="">n°1</a></li>
+                    <li><a href ="">n°2</a></li>
+                    <li><a href ="">n°3</a></li>
+                </ul>
+            </section>
+             
+             
+             
+        <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                            CODE POUR LE PIED DE PAGE
+        -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+             
+             
+             
+             
+      </div>
+        
+         <footer>
+             <nav>
+             <ul id="footer">
+                 <li class="barreMenuB"><a href="">CGV</a></li>
+                 <li class="barreMenuB"><a href="">Conditions de livraison</a></li>
+                 <li class="barreMenuB"><a href="mailto:contact@bookshop.fr">Nous contacter</a></li>
+                 <li class="barreMenuB"><a href="">FAQ</a></li>
+                 <li class="barreMenuB"><a href="">Crédits</a></li>
+                 <li class="barreMenuB"><a href=""><img src="logos/facebook.png" class="logo"></a></li>
+                 <li class="barreMenuB"><a href=""><img src="logos/twitter.png" class="logo"></a></li>
+             </ul>
+                 </nav>
+                 </footer>
+             
+            <div id="tdr">Tous droits réservés - 2020</div>
+ 
     </body>
+        
+   <!-- Site web créé par la fine équipe -->
+
+        
 </html>
