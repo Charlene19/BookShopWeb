@@ -9,37 +9,81 @@ and open the template in the editor.
         <title>Page evenement</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <script src="evtImg.js"></script>
-           <canvas id="canvas" width="1500" height="200"></canvas>
-            <script src="evtImg.js"></script>
-    </head>
-    <body>
-    
         <script src="evtImg.js"></script>
-        
-        <br> </br><br></br>
-        
+    <canvas id="canvas" width="1300" height="200"></canvas>
+    <script src="evtImg.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <p style="background-color: red">
+
+        <script src="evtImg.js"></script>       
+    </p>
+
+
+    <br> </br><br></br>
+    <div class="jumbotron text-center">
         <h1>Les livres sélectionnés pour l'évenement </h1>
-        <!-- Pour chaque livre integration de l'image dans un tableau -->
-        <table> 
-            <tbody> 
-                <tr>
-                    <td>
-                        <figure>  <p><a href="book.html" title=""><img src ="img/furieBook.jpg" width="150" height="200"  alt= "" /></a><!-- Photo du livre sélectionné. On peut cliquer sur l'image pour accèder à la fiche du livre -->      
-                    </td>
-                    <td> 
-                    Titre du livre sélectionné
-                    <br> </br>
-                    Courte description 
-                     <br> </br>
-                  Prix original /  Prix remisé
-                    </td>     
-                </tr>  
-            </tbody>
-        </table>
-        
-        
-        
-        
-    </body>
+
+    </div>
+
+    <!-- Le container -->
+    <div class="container">
+
+        <!-- 1ère ligne -->
+        <div class="row">
+
+            <!-- Première colonne -->
+
+            <div class="col-sm-4">
+
+                <figure>  <p><a href="book.html" title=""><img src ="img/furieBook.jpg" width="150" height="200"  alt= "" /></a><!-- Photo du livre sélectionné. On peut cliquer sur l'image pour accèder à la fiche du livre -->      
+                    <h3> Titre du livre sélectionné</h3>
+                    <p>Courte description </p>
+                    <p>Prix original /  Prix remisé</p>
+            </div>
+
+            <div class="col-sm-4">
+
+                <figure>  <p><a href="book.html" title=""><img src ="img/furieBook.jpg" width="150" height="200"  alt= "" /></a><!-- Photo du livre sélectionné. On peut cliquer sur l'image pour accèder à la fiche du livre -->      
+                    <h3> Titre du livre sélectionné</h3>
+                    <p>Courte description </p>
+                    <p>Prix original /  Prix remisé</p>
+            </div>
+
+            <div class="col-sm-4">
+
+                <figure>  <p><a href="book.html" title=""><img src ="img/furieBook.jpg" width="150" height="200"  alt= "" /></a><!-- Photo du livre sélectionné. On peut cliquer sur l'image pour accèder à la fiche du livre -->      
+                    <h3> Titre du livre sélectionné</h3>
+                    <p>Courte description </p>
+                    <p>Prix original /  Prix remisé</p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Pour chaque livre integration de l'image dans un tableau
+    <table> 
+        <tbody> 
+            <tr>
+                <td>
+                    <figure>  <p><a href="book.html" title=""><img src ="img/furieBook.jpg" width="150" height="200"  alt= "" /></a><!-- Photo du livre sélectionné. On peut cliquer sur l'image pour accèder à la fiche du livre 
+                </td>
+                <td> 
+               
+                <br> </br>
+                
+                </td>     
+            </tr>  
+        </tbody>
+    </table>
+    
+    -->
+
+
+</body>
 </html>

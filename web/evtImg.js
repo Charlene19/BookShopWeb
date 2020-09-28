@@ -4,7 +4,7 @@ var img = new Image();
 // directions, et la vitesse.
 
 img.src = 'img/evtRentree.png';
-var CanvasXSize = 800;
+var CanvasXSize = 1300;
 var CanvasYSize = 200;
 var speed = 30; // plus elle est basse, plus c'est rapide
 var scale = 1.05;
