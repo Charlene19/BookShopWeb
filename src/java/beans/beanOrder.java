@@ -5,8 +5,11 @@
  */
 package beans;
 
+import classes.Order;
 import java.beans.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -14,32 +17,30 @@ import java.io.Serializable;
  */
 public class beanOrder implements Serializable {
     
-    public static final String PROP_SAMPLE_PROPERTY = "sampleProperty";
+   
     
-    private String sampleProperty;
-    
-    private PropertyChangeSupport propertySupport;
-    
-    public beanOrder() {
-        propertySupport = new PropertyChangeSupport(this);
+    public beanOrder() {    
     }
     
-    public String getSampleProperty() {
-        return sampleProperty;
+    public boolean validateOrder(){
+        //doit retourner un booléen pour valider la commande
+        return false;
     }
     
-    public void setSampleProperty(String value) {
-        String oldValue = sampleProperty;
-        sampleProperty = value;
-        propertySupport.firePropertyChange(PROP_SAMPLE_PROPERTY, oldValue, sampleProperty);
+    public Order getOrder(){
+        
+        return new Order(); 
     }
     
-    public void addPropertyChangeListener(PropertyChangeListener listener) {
-        propertySupport.addPropertyChangeListener(listener);
+    public List allOrder(){
+        
+        //retourne toutes les commandes du client
+        return new ArrayList<Order>();
     }
     
-    public void removePropertyChangeListener(PropertyChangeListener listener) {
-        propertySupport.removePropertyChangeListener(listener);
+    public List unachieveOrder(){
+        
+        //retourne les commandes n'ayant pas un statut livré du client
+        return new ArrayList<Order>(); 
     }
-    
 }
