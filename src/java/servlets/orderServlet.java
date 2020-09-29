@@ -5,7 +5,9 @@
  */
 package servlets;
 
+import beans.beanOrder;
 import classes.Book;
+import classes.Order;
 import dao.PublisherDAO;
 import dao.VatDAO;
 import java.io.IOException;
@@ -23,6 +25,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 /**
@@ -32,15 +35,7 @@ import javax.sql.DataSource;
 @WebServlet(name = "orderServlet", urlPatterns = {"/orderServlet"})
 public class orderServlet extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -53,6 +48,26 @@ public class orderServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet orderServlet at " + request.getContextPath() + "</h1>");
+            
+            HttpSession session= request.getSession();
+            
+            beanOrder Sessionbean= (beanOrder) session.getAttribute("customerId");
+            if( Sessionbean==null) {
+                Sessionbean= new beanOrder();
+                session.setAttribute("customerId", Sessionbean);
+            }
+        
+       //      RequestDispatcher requestDispatcher = request.getRequestDispatcher();
+      //       requestDispatcher.include(request, response) ;
+            
+            
+            
+            
+            
+            
+            
+            
+            
             out.println("</body>");
             out.println("</html>");
         }
@@ -110,6 +125,31 @@ public class orderServlet extends HttpServlet {
         return lBook;
     }
 
+     
+    public String getStatusOrder(Order orderCours) throws SQLException{
+              String statut = "";
+             DataSource ds = null;
+            try {
+                InitialContext context = new InitialContext();
+                ds = (DataSource) context.lookup("jdbc/Bookshop");
+            } catch (NamingException ex) {
+                System.out.println(">>>Oops:Naming:" + ex.getMessage());
+            }
+
+            Connection connexion = null;
+ 
+
+                connexion= ds.getConnection();
+                String query = "Select [ORDER_STATUS_NAME] from [dbo].[ORDER_STATUS] where [ORDER_STATUS_ID] in (Select [ORDER_STATUS_ID] from [dbo].[ASSOC_STATUS_ORDER] where [ORDER_ID] = '" + orderCours.getId() +  "' ";
+                       
+                Statement stmt = connexion.createStatement();
+                ResultSet rs = stmt.executeQuery(query);
+                
+                 while (rs.next()){
+                    statut = rs.getString("ORDER_STATUS_NAME");
+                 }
+                 return statut; 
+    }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

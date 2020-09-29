@@ -42,10 +42,7 @@ public class beanOrder implements Serializable {
     }
     
     public List allOrder() throws SQLException{
-        
-
-        
-        
+      
         return new ArrayList<>();
       
     }

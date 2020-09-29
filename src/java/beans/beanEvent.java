@@ -5,11 +5,17 @@
  */
 package beans;
 
+import classes.Book;
 import classes.Event;
 import java.beans.*;
 import java.io.Serializable;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.naming.NamingException;
+import servlets.eventServlet;
 
 /**
  *
@@ -23,8 +29,17 @@ public class beanEvent implements Serializable {
       
     }
     
-    public List returnlBook(){
-        return new ArrayList();
+    public List<Book> returnlBook() {
+        
+        List eventList = new ArrayList(); 
+        try { 
+            eventList =  new eventServlet().getList();
+        } catch (SQLException ex) {
+            Logger.getLogger(beanEvent.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NamingException ex) {
+            Logger.getLogger(beanEvent.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return eventList;
     }
     
     public double getRemise(){

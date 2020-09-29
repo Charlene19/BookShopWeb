@@ -26,8 +26,11 @@ public class Order {
     private double priceTaxFree;
     private Order order;
     private String orderStatus;
-
-
+    private int Idcustomer;
+    private int shippingId;
+     private int adresseLivId;
+    private int adresseBilId;
+    
     public Order() {	
     }
     
@@ -41,6 +44,20 @@ public class Order {
         this.adresseLiv = adresseLiv;
         this.adresseBil = adresseBil;
         this.shipping = shipping;
+        this.dateOrder = dateOrder;
+        this.dateLivraison = dateLivraison;
+        this.ipCustomer = ipCustomer;
+        this.commentaire = commentaire;
+        this.priceTaxFree = priceTaxFree;
+    }
+    
+
+    public Order(Long id, int Idcustomer, int adresseLivId, int adresseBilId, int shippingId, String dateOrder, String dateLivraison, String ipCustomer, String commentaire, double priceTaxFree) {
+        this.id = id;
+        this.Idcustomer = Idcustomer;
+        this.adresseLivId = adresseLivId;
+        this.adresseBilId = adresseBilId;
+        this.shippingId = shippingId;
         this.dateOrder = dateOrder;
         this.dateLivraison = dateLivraison;
         this.ipCustomer = ipCustomer;
@@ -118,10 +135,43 @@ public class Order {
         this.customer = customer;
     }
 
+    public int getShippingId() {
+        return shippingId;
+    }
+
+    public void setShippingId(int shippingId) {
+        this.shippingId = shippingId;
+    }
+
+    public int getAdresseLivId() {
+        return adresseLivId;
+    }
+
+    public void setAdresseLivId(int adresseLivId) {
+        this.adresseLivId = adresseLivId;
+    }
+
+    public int getAdresseBilId() {
+        return adresseBilId;
+    }
+
+    public void setAdresseBilId(int adresseBilId) {
+        this.adresseBilId = adresseBilId;
+    }
+
+    
     public Long getCustomerId() {
     	
 		return customerId;
     	
+    }
+
+    public int getIdcustomer() {
+        return Idcustomer;
+    }
+
+    public void setIdcustomer(int Idcustomer) {
+        this.Idcustomer = Idcustomer;
     }
     
     
