@@ -5,11 +5,20 @@
  */
 package beans;
 
+import classes.Book;
 import classes.Order;
+import dao.PublisherDAO;
+import dao.VatDAO;
 import java.beans.*;
 import java.io.Serializable;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
 
 /**
  *
@@ -32,10 +41,13 @@ public class beanOrder implements Serializable {
         return new Order(); 
     }
     
-    public List allOrder(){
+    public List allOrder() throws SQLException{
         
-        //retourne toutes les commandes du client
-        return new ArrayList<Order>();
+
+        
+        
+        return new ArrayList<>();
+      
     }
     
     public List unachieveOrder(){

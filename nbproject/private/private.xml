@@ -3,11 +3,30 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/BookShopWeb/web/testLogin.html</file>
+            <file>file:/E:/BookShopWeb/src/java/classes/Customer.java</file>
+            <file>file:/E:/BookShopWeb/src/java/classes/ShippingOffer.java</file>
+            <file>file:/E:/BookShopWeb/src/java/classes/StatusPack.java</file>
+            <file>file:/E:/BookShopWeb/src/java/classes/Order.java</file>
             <file>file:/E:/BookShopWeb/build/web/event.html</file>
-            <file>file:/E:/BookShopWeb/build/web/style.css</file>
+            <file>file:/E:/BookShopWeb/src/java/classes/Address.java</file>
+            <file>file:/E:/BookShopWeb/src/java/dao/EventDAO.java</file>
+            <file>file:/E:/BookShopWeb/src/java/dao/Order_RowDAO.java</file>
+            <file>file:/E:/BookShopWeb/src/java/classes/OrderStatus.java</file>
             <file>file:/E:/BookShopWeb/web/allOrder.html</file>
+            <file>file:/E:/BookShopWeb/src/java/dao/StatusPackDAO.java</file>
+            <file>file:/E:/BookShopWeb/src/java/beans/beanOrder.java</file>
             <file>file:/E:/BookShopWeb/web/event.html</file>
+            <file>file:/E:/BookShopWeb/web/testLogin.html</file>
+            <file>file:/E:/BookShopWeb/src/java/servlets/eventServlet.java</file>
+            <file>file:/E:/BookShopWeb/src/java/classes/Package.java</file>
+            <file>file:/E:/BookShopWeb/src/java/classes/Carrier.java</file>
+            <file>file:/E:/BookShopWeb/src/java/servlets/orderServlet.java</file>
+            <file>file:/E:/BookShopWeb/build/web/style.css</file>
+            <file>file:/E:/BookShopWeb/src/java/classes/Event.java</file>
+            <file>file:/E:/BookShopWeb/src/java/classes/Order_Row.java</file>
+            <file>file:/E:/BookShopWeb/src/java/beans/beanEvent.java</file>
+            <file>file:/E:/BookShopWeb/src/java/dao/PackageDAO.java</file>
+            <file>file:/E:/BookShopWeb/src/java/dao/OrderDAO.java</file>
         </group>
     </open-files>
 </project-private>
