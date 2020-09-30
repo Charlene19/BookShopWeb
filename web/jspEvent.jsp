@@ -46,31 +46,41 @@
     <!-- Le container -->
     <%
         for (Book b : new beanEvent().returnlBook()) {
-
+            
+                   out.println("<div class=\"container\"> " + " <div class=\"row\"> "  + "  <div class=\"col-sm-4\"> " + " <figure>  <p><a href=\" book.html\" title=\"\"><img src = \'"+ b.getCoverURL() + "'" 
+                           + " width=\"150\" height=\"200\"  alt= \"\" /></a> "  + " <h3> " + b.getTitle() + " </h3>"
+                  + " <p>  " +  b.getPostIt() + " </p>" +
+                   " <p> " + b.getPrice() + " /  Prix remisé</p>" +
+           " </div> ");}
+          
     %>
-    <!-- Le container -->
+    
+    </div> 
+</div>
+    <!-- 
     <div class="container">
 
-        <!-- 1ère ligne -->
+        <!-- 
         <div class="row">
 
-            <!-- Première colonne -->
+            <!-- 
 
             <div class="col-sm-4">
 
-                <figure>  <p><a href="book.html" title=""><img src =" <% out.println(b.getCoverURL()); %>" width="150" height="200"  alt= "" /></a><!-- Photo du livre sélectionné. On peut cliquer sur l'image pour accèder à la fiche du livre -->      
+                <figure>  <p><a href="book.html" title=""><img src ="  out.println(b.getCoverURL()); %>" width="150" height="200"  alt= "" /></a><!-- Photo du livre sélectionné. On peut cliquer sur l'image pour accèder à la fiche du livre      
                     <h3> 
-                        <% out.println(b.getTitle()); %>
+                        out.println(b.getTitle()); %>
                     </h3>
                     <p>
-                        <% out.println(b.getPostIt()); %>
+                        out.println(b.getPostIt()); %>
                     </p>
-                    <p> <% out.println(b.getPrice());
+                    <p> out.println(b.getPrice());
                         }%> /  Prix remisé</p>
             </div>
         </div>
     </div>
 </div
+--> 
 
 <%@include file="footer.html" %>      
 </body>
