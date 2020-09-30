@@ -7,19 +7,28 @@
             <file>file:/F:/BookShopWeb/src/java/dao/PublisherDAO.java</file>
             <file>file:/F:/BookShopWeb/src/java/classes/Author.java</file>
             <file>file:/F:/BookShopWeb/src/java/classes/Keyword.java</file>
-            <file>file:/F:/BookShopWeb/src/java/classes/Book.java</file>
             <file>file:/F:/BookShopWeb/src/java/classes/Category.java</file>
-            <file>file:/F:/BookShopWeb/web/testLogin.html</file>
-            <file>file:/F:/BookShopWeb/src/java/dao/VatDAO.java</file>
-            <file>file:/F:/BookShopWeb/src/java/classes/Publisher.java</file>
             <file>file:/F:/BookShopWeb/src/java/classes/BookStatus.java</file>
-            <file>file:/F:/BookShopWeb/web/allOrder.html</file>
             <file>file:/F:/BookShopWeb/web/evtImg.js</file>
             <file>file:/F:/BookShopWeb/src/java/classes/Vat.java</file>
+            <file>file:/F:/BookShopWeb/web/footer.html</file>
             <file>file:/F:/BookShopWeb/web/test.jsp</file>
             <file>file:/F:/BookShopWeb/web/event.html</file>
+            <file>file:/F:/BookShopWeb/src/java/servlets/eventServlet.java</file>
+            <file>file:/F:/BookShopWeb/web/testAllOrder.html</file>
+            <file>file:/F:/BookShopWeb/src/java/classes/Book.java</file>
+            <file>file:/F:/BookShopWeb/web/testLogin.html</file>
+            <file>file:/F:/BookShopWeb/src/java/dao/VatDAO.java</file>
+            <file>file:/F:/BookShopWeb/src/java/beans/beanEvent.java</file>
+            <file>file:/F:/BookShopWeb/src/java/classes/Publisher.java</file>
+            <file>file:/F:/BookShopWeb/web/header.html</file>
+            <file>file:/F:/BookShopWeb/web/jspEvent.jsp</file>
+            <file>file:/F:/BookShopWeb/web/allOrder.html</file>
             <file>file:/F:/BookShopWeb/src/java/servlets/orderServlet.java</file>
             <file>file:/F:/BookShopWeb/src/java/dao/DatabaseException.java</file>
+            <file>file:/F:/BookShopWeb/src/java/classes/Order.java</file>
+            <file>file:/F:/BookShopWeb/web/jspOrder.jsp</file>
+            <file>file:/F:/BookShopWeb/src/java/dao/OrderDAO.java</file>
             <file>file:/F:/BookShopWeb/src/java/beans/beanOrder.java</file>
         </group>
     </open-files>

@@ -50,7 +50,7 @@
                    out.println("<div class=\"container\"> " + " <div class=\"row\"> "  + "  <div class=\"col-sm-4\"> " + " <figure>  <p><a href=\" book.html\" title=\"\"><img src = \'"+ b.getCoverURL() + "'" 
                            + " width=\"150\" height=\"200\"  alt= \"\" /></a> "  + " <h3> " + b.getTitle() + " </h3>"
                   + " <p>  " +  b.getPostIt() + " </p>" +
-                   " <p> " + b.getPrice() + " /  Prix remisé</p>" +
+                   " <p> " + b.getPrice() + " Euros</p>" +
            " </div> ");}
           
     %>
