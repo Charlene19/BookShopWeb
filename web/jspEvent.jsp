@@ -58,7 +58,7 @@
 
             <div class="col-sm-4">
 
-                <figure>  <p><a href="book.html" title=""><img src =" <% b.getCoverURL(); %>" width="150" height="200"  alt= "" /></a><!-- Photo du livre sélectionné. On peut cliquer sur l'image pour accèder à la fiche du livre -->      
+                <figure>  <p><a href="book.html" title=""><img src =" <% out.println(b.getCoverURL()); %>" width="150" height="200"  alt= "" /></a><!-- Photo du livre sélectionné. On peut cliquer sur l'image pour accèder à la fiche du livre -->      
                     <h3> 
                         <% out.println(b.getTitle()); %>
                     </h3>
