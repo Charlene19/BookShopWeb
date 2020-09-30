@@ -18,8 +18,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,6 +30,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
+import res.Values;
 
 /**
  *
@@ -34,10 +38,11 @@ import javax.sql.DataSource;
  */
 @WebServlet(name = "orderServlet", urlPatterns = {"/orderServlet"})
 public class orderServlet extends HttpServlet {
+  
 
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
@@ -51,31 +56,58 @@ public class orderServlet extends HttpServlet {
             
             HttpSession session= request.getSession();
             
-            beanOrder Sessionbean= (beanOrder) session.getAttribute("customerId");
+            beanOrder Sessionbean= (beanOrder) session.getAttribute(Values.BEAN_LOGIN_NAME);
+            
             if( Sessionbean==null) {
-                Sessionbean= new beanOrder();
-                session.setAttribute("customerId", Sessionbean);
-            }
+                out.println("<p> Aucune commande </p>");
+            }else{
         
-       //      RequestDispatcher requestDispatcher = request.getRequestDispatcher();
-      //       requestDispatcher.include(request, response) ;
+               String customId =  (String) request.getAttribute("email");
+               
+               List<Book> lBook = new ArrayList();
+        
+         DataSource ds = null;
+            try {
+                InitialContext context = new InitialContext();
+                ds = (DataSource) context.lookup("jdbc/Bookshop");
+            } catch (NamingException ex) {
+                System.out.println(">>>Oops:Naming:" + ex.getMessage());
+            }
+
+            Connection connexion = null;
+ 
+
+                connexion= ds.getConnection();
+                String query = "select * from Book where BOOK_ISBN in (Select [BOOK_ISBN] from [dbo].[ORDER_ROW] where Order_id in(\n" + "Select Order_id from [dbo].[ORDER] where [dbo].[ORDER].CUSTOMER_ID = "+ customId +"))  ";
+                
+                Statement stmt = connexion.createStatement();
+                ResultSet rs = stmt.executeQuery(query);
+                 Book book = null;
+
+                while (rs.next()) {
+                    book = new Book();
+                            book.setIsbn(rs.getString("BOOK_ISBN"));
+                            book.setTitle(rs.getString("Book_Title"));
+                            book.setSubTitle(rs.getString("Book_Subtitle"));
+                            book.setPrice((float) rs.getDouble("Book_HT_PROCE"));
+                            book.setCoverURL(rs.getString("Book_Cover_Url") );
+                    
+                    lBook.add(book);        
+                }
+                
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/orderServlet");
+           requestDispatcher.include(request, response) ;
             
-            
-            
-            
-            
-            
-            
-            
-            
+            out.println(lBook);
             out.println("</body>");
             out.println("</html>");
         }
     }
-    
+    }
     
     //récupere tous les livres d'un client : page html Order
      public List<Book> getList() throws SQLException, NamingException{
+         
         List<Book> lBook = new ArrayList();
         
          DataSource ds = null;
@@ -119,6 +151,7 @@ public class orderServlet extends HttpServlet {
                   lBook.add(object );
                    
                 }
+                
 
         
         
@@ -150,19 +183,16 @@ public class orderServlet extends HttpServlet {
                  }
                  return statut; 
     }
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+   
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(orderServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -176,17 +206,18 @@ public class orderServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(orderServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
+    
+   
     @Override
     public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
+        return "Servlet Order";
+    }
 
 }

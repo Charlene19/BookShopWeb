@@ -1,4 +1,4 @@
-package classes;
+package model.entity;
 
 /**
  *****************************************************************
@@ -177,8 +177,7 @@ public class Book {
     }
 
     public String toString() {
-        // TODO: implement
-        return title;
+        return isbn+" - "+title+" - "+subTitle;
     }
 
     /**

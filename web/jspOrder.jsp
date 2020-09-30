@@ -10,10 +10,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>JSP Order</title>
     </head>
     <body>
           <hr>
+          
     <jsp:useBean class="beans.beanOrder" scope="session" id="customerId" />
 
     <%@include file="header.html" %>  
@@ -30,9 +31,9 @@
 
 
         <h3> Dernier mois</h3>  
-    <c:forEach var="Book" items="listOrder">
-    </c:forEach>
+      
         
+      
         <h3> 6 derniers mois</h3> 
         
         <%-- mettre la condition par rapport à la date de commande --%>

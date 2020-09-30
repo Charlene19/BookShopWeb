@@ -11,6 +11,7 @@ import dao.PublisherDAO;
 import dao.VatDAO;
 import java.beans.*;
 import java.io.Serializable;
+import static java.lang.System.out;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -42,7 +43,7 @@ public class beanOrder implements Serializable {
     }
     
     public List allOrder() throws SQLException{
-      
+     
         return new ArrayList<>();
       
     }
