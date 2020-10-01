@@ -23,22 +23,17 @@ import servlets.eventServlet;
  */
 public class beanEvent implements Serializable {
     
-    
+    List<Book> eventList = null;
     
     public beanEvent() {
+        this.eventList = new ArrayList();
       
     }
     
-    public List<Book> returnlBook() {
-        
-        List eventList = new ArrayList(); 
-        try { 
-            eventList =  new eventServlet().getList();
-        } catch (SQLException ex) {
-            Logger.getLogger(beanEvent.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (NamingException ex) {
-            Logger.getLogger(beanEvent.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    
+    
+    public List<Book> returnlBook() throws SQLException, NamingException {
+    eventList = new eventServlet().getList();
         return eventList;
     }
     

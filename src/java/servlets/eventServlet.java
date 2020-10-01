@@ -5,6 +5,7 @@
  */
 package servlets;
 
+import beans.beanEvent;
 import beans.beanOrder;
 import classes.Book;
 import dao.PublisherDAO;
@@ -17,6 +18,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.servlet.RequestDispatcher;
@@ -35,7 +38,7 @@ import javax.sql.DataSource;
  */
 @WebServlet(name = "eventServlet", urlPatterns = {"/eventServlet"})
 public class eventServlet extends HttpServlet {
-
+String event;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -46,7 +49,8 @@ public class eventServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException, NamingException {
+
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
@@ -56,12 +60,22 @@ public class eventServlet extends HttpServlet {
             out.println("<title>Servlet eventServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet eventServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet eventServlet at " + request.getContextPath() + "</h1>");  
+           event = (String) request.getAttribute("event");
+           List<Book> lBook = getList();
+           Book b1 = new Book(); 
+           b1.setTitle("Blabla"); 
+          lBook.add(b1); 
+           request.setAttribute("list", lBook);
+            request.getRequestDispatcher("jspEvent.jsp").include(request, response);
             out.println("</body>");
             out.println("</html>");
+            
+            ///WEB-INF/jspEvent.jsp
         }
     }
 
+  
     
     //récupere tous les livres d'un client : page html Order
      public List<Book> getList() throws SQLException, NamingException{
@@ -79,7 +93,7 @@ public class eventServlet extends HttpServlet {
  
 
                 connexion= ds.getConnection();
-                String query = "select * from Book where BOOK_ISBN in (Select BOOK_ISBN from dbo.ASSOC_BOOK_EVENT where EVENT_ID = 2)";
+                String query = "select * from Book where BOOK_ISBN in (Select BOOK_ISBN from dbo.ASSOC_BOOK_EVENT where EVENT_ID ="+ event +" )";
                 Statement stmt = connexion.createStatement();
                 ResultSet rs = stmt.executeQuery(query);
                  Book object = null;
@@ -125,7 +139,13 @@ public class eventServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+    try {
         processRequest(request, response);
+    } catch (SQLException ex) {
+        Logger.getLogger(eventServlet.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (NamingException ex) {
+        Logger.getLogger(eventServlet.class.getName()).log(Level.SEVERE, null, ex);
+    }
     }
 
     /**
@@ -139,7 +159,13 @@ public class eventServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+    try {
         processRequest(request, response);
+    } catch (SQLException ex) {
+        Logger.getLogger(eventServlet.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (NamingException ex) {
+        Logger.getLogger(eventServlet.class.getName()).log(Level.SEVERE, null, ex);
+    }
     }
 
     /**

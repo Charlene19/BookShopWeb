@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>orderServlet</servlet-name>
+        <servlet-class>servlets.orderServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+      <servlet-mapping>
+        <servlet-name>orderServlet</servlet-name>
+        <url-pattern>/allOrder</url-pattern>
+    </servlet-mapping>
+  
+    
+    <servlet-mapping>
+        <servlet-name>eventServlet</servlet-name>
+        <url-pattern>/event</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>eventServlet</servlet-name>
+        <servlet-class>servlets.eventServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+  
+  
+  <servlet>
+        <servlet-name>welcomeServlet</servlet-name>
+        <servlet-class>servlets.welcomeServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>welcomeServlet</servlet-name>
+        <url-pattern>/welcome</url-pattern>
+    </servlet-mapping>
+ 
+</web-app>

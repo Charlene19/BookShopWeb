@@ -39,6 +39,8 @@ import res.Values;
 @WebServlet(name = "orderServlet", urlPatterns = {"/orderServlet"})
 public class orderServlet extends HttpServlet {
   
+    private String customId; 
+    private final String bookRequest = "select * from Book where BOOK_ISBN in (Select [BOOK_ISBN] from [dbo].[ORDER_ROW] where Order_id in(\n" + "Select Order_id from [dbo].[ORDER] where [dbo].[ORDER].CUSTOMER_ID = "+ customId +")) ";
 
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -62,7 +64,7 @@ public class orderServlet extends HttpServlet {
                 out.println("<p> Aucune commande </p>");
             }else{
         
-               String customId =  (String) request.getAttribute("email");
+                customId =  (String) request.getAttribute("email");
                
                List<Book> lBook = new ArrayList();
         
@@ -78,7 +80,7 @@ public class orderServlet extends HttpServlet {
  
 
                 connexion= ds.getConnection();
-                String query = "select * from Book where BOOK_ISBN in (Select [BOOK_ISBN] from [dbo].[ORDER_ROW] where Order_id in(\n" + "Select Order_id from [dbo].[ORDER] where [dbo].[ORDER].CUSTOMER_ID = "+ customId +"))  ";
+                String query = bookRequest;
                 
                 Statement stmt = connexion.createStatement();
                 ResultSet rs = stmt.executeQuery(query);
@@ -122,7 +124,7 @@ public class orderServlet extends HttpServlet {
  
 
                 connexion= ds.getConnection();
-                String query = "SELECT * from Book where book_isbn in (SELECT [BOOK_ISBN] from [dbo].[ORDER_ROW] where [dbo].[ORDER_ROW].[ORDER_ID] = in (SELECT [ORDER_ID]  from [dbo].[ORDER] where [CUSTOMER_ID] = 4))";
+                String query = bookRequest;
                 Statement stmt = connexion.createStatement();
                 ResultSet rs = stmt.executeQuery(query);
                  Book object = null;

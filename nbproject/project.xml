@@ -8,10 +8,10 @@
             <web-module-libraries>
                 <library dirs="200">
                     <file>${file.reference.bootstrap-4.0.0-dist.zip}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
                     <file>${file.reference.bootstrap-4.0.0-dist.zip-1}</file>
-                    <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
             </web-module-libraries>
             <web-module-additional-libraries/>
