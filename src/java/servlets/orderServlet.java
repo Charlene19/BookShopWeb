@@ -57,7 +57,6 @@ public class orderServlet extends HttpServlet {
             out.println("<h1>Servlet orderServlet at " + request.getContextPath() + "</h1>");
             
             HttpSession session= request.getSession();
-            
             beanOrder Sessionbean= (beanOrder) session.getAttribute(Values.BEAN_LOGIN_NAME);
             
             if( Sessionbean==null) {
@@ -97,7 +96,7 @@ public class orderServlet extends HttpServlet {
                     lBook.add(book);        
                 }
                 
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/orderServlet");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jspOrder.jsp");
            requestDispatcher.include(request, response) ;
             
             out.println(lBook);

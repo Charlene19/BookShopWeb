@@ -34,6 +34,8 @@ public class beanEvent implements Serializable {
     
     public List<Book> returnlBook() throws SQLException, NamingException {
     eventList = new eventServlet().getList();
+    
+    
         return eventList;
     }
     

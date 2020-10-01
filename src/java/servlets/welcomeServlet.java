@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -42,9 +43,11 @@ public class welcomeServlet extends HttpServlet {
             out.println("<body>");
             out.println("<h1>Servlet welcomeServlet at " + request.getContextPath() + "</h1>");
             String message = "2"; 
-            request.setAttribute("event",message); 
-             request.getRequestDispatcher("/eventServlet").forward(request, response);
-            out.println("</body>");
+            Cookie cookie = new Cookie("event",message);
+            response.addCookie(cookie); 
+             //request.getRequestDispatcher("/eventServlet").forward(request, response);
+           
+             out.println("</body>");
             out.println("</html>");
         }
     }

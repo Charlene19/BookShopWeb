@@ -26,6 +26,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -61,13 +62,7 @@ String event;
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet eventServlet at " + request.getContextPath() + "</h1>");  
-           event = (String) request.getAttribute("event");
-           List<Book> lBook = getList();
-           Book b1 = new Book(); 
-           b1.setTitle("Blabla"); 
-          lBook.add(b1); 
-           request.setAttribute("list", lBook);
-            request.getRequestDispatcher("jspEvent.jsp").include(request, response);
+
             out.println("</body>");
             out.println("</html>");
             
@@ -93,7 +88,7 @@ String event;
  
 
                 connexion= ds.getConnection();
-                String query = "select * from Book where BOOK_ISBN in (Select BOOK_ISBN from dbo.ASSOC_BOOK_EVENT where EVENT_ID ="+ event +" )";
+                String query = "select * from Book where BOOK_ISBN in (Select BOOK_ISBN from dbo.ASSOC_BOOK_EVENT where EVENT_ID =2 )";
                 Statement stmt = connexion.createStatement();
                 ResultSet rs = stmt.executeQuery(query);
                  Book object = null;
@@ -127,6 +122,19 @@ String event;
         
         return lBook;
     }
+     
+     private Cookie getCookie(Cookie[] cookies, String name) {
+
+        if (cookies != null) 
+            for (Cookie c : cookies) 
+                if (c.getName().equals(name)) 
+                    return c;
+                
+            
+        
+        return null;
+    }
+     
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

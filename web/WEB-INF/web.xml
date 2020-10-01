@@ -5,12 +5,10 @@
         <servlet-class>servlets.orderServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
-      <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>orderServlet</servlet-name>
         <url-pattern>/allOrder</url-pattern>
     </servlet-mapping>
-  
-    
     <servlet-mapping>
         <servlet-name>eventServlet</servlet-name>
         <url-pattern>/event</url-pattern>
@@ -20,9 +18,7 @@
         <servlet-class>servlets.eventServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
-  
-  
-  <servlet>
+    <servlet>
         <servlet-name>welcomeServlet</servlet-name>
         <servlet-class>servlets.welcomeServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
@@ -31,5 +27,18 @@
         <servlet-name>welcomeServlet</servlet-name>
         <url-pattern>/welcome</url-pattern>
     </servlet-mapping>
- 
+    
+     <servlet>
+        <servlet-name>ServletController</servlet-name>
+        <servlet-class>controller.ServletController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletController</servlet-name>
+        <url-pattern>/ServletController</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
 </web-app>
