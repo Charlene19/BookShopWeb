@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2>Recherche avancée</h2>
+        <form action="/advSearchServlet">
+            
+            par Titre : <input type="text" name="title" value="" />
+            <br></br>
+            par ISBN : <input type="text" name="isbn" value="" />
+             <br></br>
+            par Catégorie : <select name="category">
+                <option></option>
+                <option></option>
+            </select>
+             <br></br>
+            par Mot-Clefs : <input type="text" name="keywords" value="" />
+             <br></br>
+            par prix : <input type="text" name="price" value="" />
+             <br></br>
+             Article remisé <input type="radio" name="remise" value="" />
+             <br></br>
+            <input type="submit" value="doSearch" />
+        </form>
+        
+    </body>
+</html>

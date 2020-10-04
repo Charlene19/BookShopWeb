@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/default.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+
+        /* Add Animation */
+        @-webkit-keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        @keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        /* The Close Button */
+        .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-header {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        .modal-body {
+            padding: 2px 16px;
+            overflow: scroll; /* Added this so the content fits inside */
+        }
+
+        .modal-footer {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        .banniere {
+            display: inline-block;
+        }
+
+        #logoBookshop {
+            width: 30vmin;
+            width: 20vmax;
+            margin-left: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <!-- Trigger/Open The Modal -->
+
+    <ul>
+        <li class="banniere">
+            <h1><a href="">
+                    <figure /><img src="img/imgBookShop.png" alt="Logo Bookshop" id="logoBookshop">
+                </a></h1>
+        </li>
+        <!-- recherche rapide -->
+        <li class="banniere"><label for="recherche">Recherche</label>
+            <input type="text" id="recherche" name="recherche">
+            <button type="button">OK</button>
+        </li>
+        <li class="banniere"><a href=""><span id="barreMenuD">Panier</span></a></li>
+        <li class="banniere"><button id="myBtn">Mon compte</button></li>
+    </ul>
+
+
+
+
+
+
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <br></br>
+            </div>
+            <div class="modal-body">
+
+                <div class="k_box_account" id="k_box_account_content">
+
+                    <!-- login container -->
+                    <div class="k_box_account" id="k_box_account_login">
+
+                        <table class="k_table_form">
+                            <form action="account.html" method="get">
+                                <tr>
+                                    <th>Se connecter</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Utilisateur<br />
+                                        <input class="k_text_field" type="text" name="username" value="" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Mot de passe<br />
+                                        <input class="k_text_field" type="password" name="password" value="" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="k_label_error">
+                                        Message d'erreur
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button class="k_button" type="submit" name="action" value="login">Connexion</button>
+
+                                    </td>
+                                </tr>
+                            </form>
+                        </table>
+
+                    </div>
+
+                    <!-- account creation container -->
+                    <div class="k_box_account" id="k_box_account_create">
+                        <table class="k_table_form">
+                            <tr>
+                                <th>S'enregistrer</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <form action="register.html" method="get">
+                                        <button class="k_button" type="submit" name="action" value="new_account">Creer un compte</button>
+                                    </form>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <br></br>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

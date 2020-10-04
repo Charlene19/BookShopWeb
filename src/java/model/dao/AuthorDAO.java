@@ -50,7 +50,7 @@ public class AuthorDAO implements DAO<Author, Integer> {
 
             object = new Author();
             object.setId(resultSet.getInt(1));
-            object.setFristName(resultSet.getString(2));
+            object.setFirstName(resultSet.getString(2));
             object.setLastName(resultSet.getString(3));
             object.setPostIt(resultSet.getString(4));
 
@@ -84,7 +84,7 @@ public class AuthorDAO implements DAO<Author, Integer> {
 
             author = new Author();
             author.setId(resultSet.getInt(1));
-            author.setFristName(resultSet.getString(2));
+            author.setFirstName(resultSet.getString(2));
             author.setLastName(resultSet.getString(3));
             author.setPostIt(resultSet.getString(4));
         }

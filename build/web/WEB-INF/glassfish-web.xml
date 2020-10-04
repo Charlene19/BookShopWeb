@@ -17,6 +17,9 @@
 -->
 <glassfish-web-app error-url="">
   <context-root>/</context-root>
+  <servlet>
+    <servlet-name>servlet1</servlet-name>
+  </servlet>
   <class-loader delegate="true"/>
   <jsp-config>
     <property name="keepgenerated" value="true">

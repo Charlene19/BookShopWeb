@@ -27,6 +27,9 @@ public class BookDAO implements DAO<Book, String> {
 
     public final String QUERY_SELECT_ALL_BOOK
             = "SELECT * FROM " + TABLE_BOOK;
+    public final String QUERY_SELECT_BOOK_FROM_ISBN
+            = "SELECT * FROM " + TABLE_BOOK +" "
+            + "WHERE BOOK_ISBN = ?";
 
     public final String QUERY_SELECT_ASSOC_BOOK_STATUS
             = "SELECT BOOK_STATUS_ID, ASSOC_STATUS_BOOK_DATE, ASSOC_STATUS_BOOK_POST_IT "
@@ -99,7 +102,49 @@ public class BookDAO implements DAO<Book, String> {
 
     @Override
     public Book getById(String id) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet.");
+ 
+        Database database = Database.getInstance();
+        Connection connection;
+        PreparedStatement statement;
+        ResultSet resultSet;
+
+        connection = database.getConnection();
+        
+        // Prepares and execute the query
+        statement = connection.prepareStatement(QUERY_SELECT_BOOK_FROM_ISBN);
+        statement.setString(1, id);
+        resultSet = statement.executeQuery();
+
+        // Creates objects based on the query results
+        Book object = null;
+
+        if (resultSet.next()) {
+
+            object = new Book();
+            object.setIsbn(resultSet.getString(1));
+
+            // Obtains the publisher matching the ID
+            object.setPublisher(new PublisherDAO().getById(resultSet.getInt(2)));
+            // Obtains the VAT matching the ID
+            object.setVat(new VatDAO().getById(resultSet.getInt(3)));
+            object.setTitle(resultSet.getString(4));
+            object.setSubTitle(resultSet.getString(5));
+            object.setPrice(resultSet.getFloat(6));
+            object.setCoverURL(resultSet.getString(7));
+            object.setSummary(resultSet.getString(8));
+            object.setQuantity(resultSet.getInt(9));
+            object.setShelf(resultSet.getString(10));
+            object.setPostIt(resultSet.getString(11));
+
+            object.setCategories(getCategories(object.getIsbn()));
+            object.setKeywords(getKeywords(object.getIsbn()));
+            object.setAuthors(getAuthors(object.getIsbn()));
+            object.setStatuses(getStatuses(object.getIsbn()));
+        }
+
+        statement.close();
+
+        return object;
     }
 
     @Override

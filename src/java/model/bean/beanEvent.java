@@ -5,15 +5,15 @@
  */
 package model.bean;
 
+import model.entity.Book;
+import model.entity.Event;
 import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.naming.NamingException;
-import model.dao.BookDAO;
-import model.entity.Event;
+import controller.eventServlet;
+import model.dao.EventDAO;
 
 /**
  *
@@ -21,25 +21,33 @@ import model.entity.Event;
  */
 public class beanEvent implements Serializable {
     
+ List<Book> books;
+       EventDAO ed = new EventDAO(); 
+    
     public beanEvent() {
+       
       
     }
     
     
     
-    public List returnlBook(){
-
-        return new ArrayList();
+    public List<Book> returnlBook(String id) throws SQLException, NamingException {
+    books = ed.getList(id); 
+        
+        return books;
+    
     }
     
-    public double getRemise(){
-       //doit retourner ou une remise ou le prix du livre à déterminer. 
+    public Double getDiscountPrice(String id) throws SQLException{
+        Event event = ed.getEvent(id); 
+        Double remise = event.getDiscount(); 
         
-        return 0.0;
+        return remise; 
+        
     }
     
-    public Event getEvent(){
+    public Event getEvent(String id) throws SQLException{
         
-        return new Event();
+        return ed.getEvent(id);
     }
 }

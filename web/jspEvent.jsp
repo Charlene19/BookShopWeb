@@ -5,15 +5,14 @@
     Author     : cda611
 --%>
 
-<%@page import="beans.beanEvent"%>
 
-<%@page import="classes.Book"%>
+<%@page import="model.entity.Book"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>JSP Event</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="templatecss.css">
@@ -28,9 +27,9 @@
 </head>
 <body>
     <hr>
-    <jsp:useBean class="beans.beanEvent" scope="application" id="event" />
 
-    <%@include file="header.html" %>   
+
+    <%@include file="headerJsp.jsp" %>   
 
 
     <p>
@@ -45,30 +44,39 @@
 
     </div>
     <div>
-    <!-- Le container -->
-     
-    
-</div>
+        <!-- Le container -->
 
-    
-    <%
-        for (Book b : new beanEvent().returnlBook()) {
-            
-                   out.println("<div class=\"container\"> " + " <div class=\"row\"> "  + "  <div class=\"col-sm-4\"> ");
-                   out.println( " <figure>  <p><a href=\" book?isbn=\""); 
-                   out.println( b.getIsbn() + " title=\"\"><img src = \'"+ b.getCoverURL() + "'" 
-                           + " width=\"150\" height=\"200\"  alt= \"\" /></a> "  + " <h3> " + b.getTitle() + " </h3>"
-                  + " <p>  " +  b.getPostIt() + " </p>" +
-                   " <p> " + b.getPrice() + " Euros</p>" +
-           " </div> ");}
-          
-    %>
-     
-    
-    </div> 
-</div>
 
-<br></br><br></br><br></br>
-<%@include file="footer.html" %>      
+
+        <div class="container"> 
+            <div class="row">  
+               
+                <c:forEach var="book" items="${book}">
+
+                    <a href="book?isbn=${book.isbn}<img src ="${book.coverURL}" width="150" height="200"  alt= "" /></a>
+
+                    <div class="col-sm-4"> 
+                        <figure>  <p><a href="book?isbn=${book.isbn} "><img src ="${book.coverURL}" width="150" height="200"  alt= "" /></a>
+                            <h3>  ${book.title}  </h3>
+
+                            <p>   ${book.postIt} </p>
+                            <c:set var="remise" value="${remise}"/>
+                            <%-- Calcul à revoir --%>
+                            
+                            <p> Ancien prix :  ${book.price}  Euros</p><p> Nouveau prix : <c:set var="discount" value="${remise * book.price /100}"/>  ${discount} Euros</p>
+
+                            <br></br><br></br>
+                    </div> 
+                </div>
+
+
+
+            </c:forEach>
+        </div> 
+    </div>
+
+
+    <br></br><br></br><br></br>
+    <%@include file="footerJsp.jsp" %>      
 </body>
 </html>

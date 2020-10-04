@@ -2,43 +2,74 @@
 <html>
 
 <head>
-
-    <link rel="stylesheet" href="style.css" />
-    
+    <title>Connexion</title>
+    <link rel="stylesheet" href="css/default.css" />
 </head>
 
 <body>
 
-    <div class="login_container">
-        <table class="login_table">
-            <tr>
-                <th>Se connecter</th>
-            </tr>
-            <tr>
-                <td>
-                    Utilisateur<br />
-                    <input class="login_input" type="text" name="username" value="" />
-
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Mot de passe<br />
-                    <input class="login_input" type="password" name="password" value="" />
-                </td>
-            </tr>
-            <tr>
-                <td class="login_text">
-                    Message d'erreur
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input class="login_button" type="submit" name="username" value="Connexion" />
-                </td>
-            </tr>
-        </table>
+    <!-- page title container -->
+    <div class="k_box_page_title">
+        Mon compte
     </div>
 
+    <!-- page content container -->
+    <div class="k_box_account" id="k_box_account_content">
+
+        <!-- login container -->
+        <div class="k_box_account" id="k_box_account_login">
+
+            <table class="k_table_form">
+                <form action="login" method="get">
+                    <tr>
+                        <th>Se connecter</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            Utilisateur<br />
+                            <input class="k_text_field" type="text" name="username" value="" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Mot de passe<br />
+                            <input class="k_text_field" type="password" name="password" value="" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="k_label_error">
+                            Message d'erreur
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="k_button" type="submit" name="action" value="login">Connexion</button>
+
+                        </td>
+                    </tr>
+                </form>
+            </table>
+
+        </div>
+
+        <!-- account creation container -->
+        <div class="k_box_account" id="k_box_account_create">
+            <table class="k_table_form">
+                <tr>
+                    <th>S'enregistrer</th>
+                </tr>
+                <tr>
+                    <td>
+                        <form action="register.html" method="get">
+                            <button class="k_button" type="submit" name="action" value="new_account">Creer un compte</button>
+                        </form>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
 </body>
+
 </html>

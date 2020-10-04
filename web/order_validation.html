@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/default.css" />
+</head>
+
+<body>
+
+    <div class="k_box_page_content">
+
+        <!-- page title container -->
+        <div class="k_box_page_title">
+            Ma commande
+        </div>
+
+        <!-- page content container -->
+        <div id="k_box_shopping_cart_content">
+
+            <!-- displayed when unexpected stuffs happen -->
+            <label class="k_label_error">Erreur</label>
+
+            <!-- Informative message -->
+            <label class="k_label_info">Un evenement a eu lieu sur cette commande</label>
+
+            <!-- Contains products -->
+            <table class="k_table_form" id="k_table_form_shopping_cart">
+                <form action="shopping_cart.html" method="get">
+                    <tr>
+                        <th>Titre</th>
+                        <th>Prix Unitaire HT</th>
+                        <th>Prix Unitaire TTC</th>
+                        <th>TVA</th>
+                        <th>Quantité</th>
+                        <th>Prix Total TTC</th>
+                    </tr>
+
+                    <!-- This whole tr contains product's info -->
+                    <tr>
+                        <input type="hidden" name="ref" value="15684" />
+                        <td><a href="/book.html">Java Dev</a></td>
+                        <td>14.56</td>
+                        <td>15.95</td>
+                        <td>20%</td>
+                        <td>10</td>
+                        <td>159.95</td>
+                    </tr>
+
+                    <tr>
+                        <input type="hidden" name="ref" value="15684" />
+                        <td><a href="/book.html">Java Dev</a></td>
+                        <td>14.56</td>
+                        <td>15.95</td>
+                        <td>20%</td>
+                        <td>10</td>
+                        <td>159.95</td>
+                    </tr>
+                    
+                    <tr>
+                        <input type="hidden" name="ref" value="15684" />
+                        <td><a href="/book.html">Java Dev</a></td>
+                        <td>14.56</td>
+                        <td>15.95</td>
+                        <td>20%</td>
+                        <td>10</td>
+                        <td>159.95</td>
+                    </tr>
+                </form>
+            </table>
+            <br/>
+            
+            <div id="k_box_order_validation_total">
+            <!-- Contains products -->
+            <table class="k_table_form" id="k_table_form_shopping_cart">
+                
+                <form action="shopping_cart.html" method="get">
+                    <tr>
+                        <th>Prix Total HT</th>
+                        <th>Prix Total TTC</th>
+                    </tr>
+                    
+                    <tr>
+                        <td>14.50</td>
+                        <td>15.00</td>
+
+                    </tr>
+                    
+                </form>
+                
+            </table>
+            </div>
+            
+            
+            <!-- This has to be displayed only if the cart contains products -->
+            <form action="shopping_cart.html" method="get">
+                <div id="k_box_shopping_cart_actions">
+
+                    <div id="k_box_shopping_cart_clear">
+                        <button class="k_button" type="submit" name="action" value="clear">Revenir au panier</button>
+                    </div>
+
+                    <div id="k_box_shopping_cart_order">
+                        <button class="k_button" type="submit" name="action" value="order">Valider cette commande</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

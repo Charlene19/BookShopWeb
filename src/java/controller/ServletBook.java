@@ -20,7 +20,7 @@ import res.Values;
 public class ServletBook extends HttpServlet {
 
     public final String JSP_HOME = "/WEB-INF/home.jsp";
-    public final String JSP_BOOK = "/WEB-INF/book_info.jsp";
+    public final String JSP_BOOK = "/book_info.jsp";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

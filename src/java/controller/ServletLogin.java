@@ -16,14 +16,25 @@ import model.entity.Customer;
 
 import res.Values;
 
-
+/**
+ *
+ * @author zvr
+ */
 @WebServlet(urlPatterns = {"/login"})
 public class ServletLogin extends HttpServlet {
 
     public final String JSP_LOGIN = "/WEB-INF/login.jsp";
-    public final String JSP_ACCOUNT = "/template.html";
+    public final String JSP_ACCOUNT = "/homePageJsp.jsp";
     
-    
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -70,12 +81,13 @@ public class ServletLogin extends HttpServlet {
             if(customer == null){
                 errorMessage += Values.ERROR_INVALID_LOGIN;
             }
-            // If login OK 
+            // If login OK
             else{
-                request.getRequestDispatcher(JSP_ACCOUNT).include(request, response);
                 loginBean.setIsLogged(true);
                 session.setAttribute(Values.BEAN_LOGIN_NAME, loginBean);
                 session.setAttribute(Values.PARAM_CUSTOMER, customer);
+                
+                request.getRequestDispatcher(JSP_ACCOUNT).include(request, response);
                 return;
             }
             
@@ -120,4 +132,3 @@ public class ServletLogin extends HttpServlet {
         processRequest(request, response);
         }
     }
-

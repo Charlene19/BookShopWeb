@@ -2,68 +2,165 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/default.css" />
 </head>
 
 <body>
-    <!-- Fiche du livre -->
-    <div>
-        <img src="img/0.jpg" width="350" height="500" align="left" />
-        Titre du livre<br/>
 
-        Sous-titre<br/>
-        <hr>
-        Auteur<br/>
-        Editeur<br/>
-        <hr>
+    <div class="k_box_page_content" id="k_box_book_page_content">
 
-    </div>
-    Resumé :<br/><br/>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dolor nisl, suscipit eget arcu a, iaculis rutrum est. Maecenas suscipit viverra purus sit amet lobortis. Pellentesque placerat massa at fringilla porttitor. Praesent dictum ultrices tellus. Nullam non leo et felis malesuada venenatis. Suspendisse ultricies porttitor ex, commodo posuere turpis pharetra non. Maecenas hendrerit mi quis quam vulputate auctor.
+        <!-- page title container -->
+        <div class="k_box_page_title">
+            Fiche du livre
+        </div>
 
-    Aenean viverra interdum risus, et scelerisque orci laoreet sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam gravida malesuada egestas. Fusce sodales molestie porttitor. Curabitur molestie cursus odio, id bibendum neque consequat sed. Donec et laoreet est. Duis varius dignissim felis et consequat. Nullam rutrum, ligula quis congue tincidunt, lectus ex ornare eros, ac scelerisque est nulla at nisi. Donec vulputate gravida venenatis. Maecenas porttitor eros auctor, ultrices augue et, sagittis justo. Proin varius volutpat mi quis condimentum. Pellentesque vitae dolor urna. Nulla vitae malesuada est, pretium sollicitudin dui.
+        <div id="k_box_book_content">
 
-    Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin eget tortor diam. Donec dolor turpis, vulputate a porta at, posuere ut nulla. Cras commodo lacinia augue. Praesent porta, libero in semper interdum, massa nunc interdum odio, maximus eleifend est risus at erat. Integer non lacinia augue. In dignissim, mauris eu gravida dapibus, sapien magna varius dui, quis tempor felis nisl at magna. Curabitur ultricies eros quis metus mollis, id molestie ipsum sodales. Pellentesque nec nunc egestas, sagittis risus eu, scelerisque enim. Praesent est ligula, iaculis non lectus et, aliquam placerat metus. Cras augue dui, lacinia quis lorem vitae, iaculis tempor eros. Proin auctor blandit quam, sit amet tincidunt ante ultricies id. Nunc id ante at risus vehicula porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    
-    <hr>
-    
-    Quantité disponible : 12<br/>
-    Prix : 20.50€<br/>
+            <div id="k_box_book_image">
 
+                <img src="img/0.jpg" />
+                <form action="/shopping_cart.html" method="get">
 
-    <br /><br /><br /><br /><br /><br />
+                    <!-- This button could be disabled if the book is already in the shopping cart
+                        and change its label too -->
+                    <button class="k_button" type="submit" name="action" value="add_book">Ajouter au panier</button>
+                    <input type="hidden" name="ref" value="4859789569" />
+                </form>
+            </div>
 
+            <div id="k_box_book_info">
 
-    <!-- Commentaires des clients -->
-    <div align="left">
-        Titre du commentaire<br />
-        <textarea rows="8" cols="64" readonly>At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies ze,zoief okpok opkp ok po o j iojij oij oijoij oi  j ioj ij oij.
-        </textarea>
-        <br />
-        Nom du client - 02/12/2035
-    </div>
+                <!-- title and subtitle container -->
+                <div id="k_book_info_title">
+                    <label id="k_label_book_title">Java Programming</label><br>
+                    <label id="k_label_book_subtitle">
+                        Learn java programming. the absolute java for beginner guide
+                    </label>
+                </div>
 
-    <br />
-    <br />
+                <!-- author, publisher, summary etc -->
+                <div id="k_box_book_details">
 
-    <div align="left">
-        Titre du commentaire<br />
-        <textarea rows="8" cols="64" readonly>At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies ze,zoief okpok opkp ok po o j iojij oij oijoij oi  j ioj ij oij.
-        </textarea>
-        <br />
-        Nom du client - 02/12/2035
-    </div>
+                    <div id="k_box_book_plus">
+                        Auteur : Nom de l'auteur<br /><br />
+                        Editeur : Nom de l'editeur<br /><br />
+                        Categories : <br />
+                        c0, c1, c2<br />
+                        c3, c4, c5<br /><br />
+                        Mots-clés : <br />
+                        mc0, mc1, mc2<br />
+                        mc3, mc4, mc5<br />
+                    </div>
 
-    <br />
-    <br />
-    <br />
-    <br />
+                    <div id="k_book_info_summary">
+                        Resumé : <br />
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec venenatis urna, at viverra erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue sagittis, ultrices justo sodales, accumsan ligula. Maecenas maximus nisi dui, sit amet finibus magna blandit sit amet. Morbi facilisis aliquam erat quis eleifend. Donec aliquam magna id est pretium fringilla. Sed ac aliquam erat. Nunc eu risus ac tortor accumsan commodo.
+                    </div>
+                </div>
 
-    <div>
-        Commentez ce livre : <br />
-        <textarea name="" cols="40" rows="5"></textarea>
-        <br />
-        <input type="submit" name="send_comment" />
+                <div id="k_book_info_customer">
+                    <label id="k_label_book_price">Prix: 20.50€</label>
+                    <label id="k_label_book_stock">Quantité disponible: 56</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- book comments section -->
+        <div id="k_box_book_comments">
+
+            <!-- title container -->
+            <div class="k_box_page_title">
+                Commentaires
+            </div>
+            <!-- customer comment container -->
+            <div id="k_box_book_comment">
+
+                <!-- method should be POST -->
+                <form action="/book.html" method="get">
+
+                    <div id="k_box_book_comment_title">
+                        Titre du commentaire :
+                        <input class="k_text_field" type="text" name="comment_title" />
+                    </div>
+
+                    <div id="k_box_book_comment_msg">
+                        Message :
+                        <textarea class="k_text_field" name="comment_msg" cols="50" rows="4"></textarea>
+                    </div>
+
+                    <div id="k_box_book_comment_details">
+                        Note :
+                        <input class="k_input_number_select" type="number" name="comment_rating" min="0" max="5" /> / 5
+                        <div class="k_right">
+                            <button class="k_button" type="submit" name="action" value="send_comment">Envoyer le commentaire</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+            <!-- comment container -->
+            <!-- comment example -->
+            <div id="k_box_book_comment">
+                <div id="k_box_book_comment_title">
+                    Titre du commentaire
+                </div>
+                <div id="k_box_book_comment_msg">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec venenatis urna, at viverra erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue sagittis, ultrices justo sodales, accumsan ligula. Maecenas maximus nisi dui, sit amet finibus magna blandit sit amet. Morbi facilisis aliquam erat quis eleifend. Donec aliquam magna id est pretium fringilla. Sed ac aliquam erat. Nunc eu risus ac tortor accumsan commodo.
+
+                    Curabitur vitae rhoncus mauris. Integer mollis eget est id tincidunt. Proin justo nisl, gravida at vestibulum ut, bibendum nec tellus. Suspendisse ut consectetur libero. Donec ullamcorper magna porttitor felis congue, vel eleifend odio imperdiet. Nulla tincidunt aliquet leo, nec congue diam egestas in. Donec a odio fringilla, porta leo eget, consectetur odio. Praesent volutpat mi vel gravida laoreet. Quisque sollicitudin mi a mauris auctor, non sagittis nisl mollis. Quisque orci risus, tristique id tincidunt eget, laoreet non tellus. Maecenas at eros at erat accumsan hendrerit id eget nisi. Praesent eget arcu eleifend, dictum tellus vitae, condimentum augue. Etiam cursus gravida odio vestibulum viverra. Nulla vel libero vel ante lobortis egestas.
+                </div>
+                <div id="k_box_book_comment_details">
+                    <label class="k_left">Note : 3/5</label>
+                    <label class="k_right">Envoyé le 24/2/2019 par Anon39570</label>
+                </div>
+            </div>
+            <!-- comment example -->
+            <div id="k_box_book_comment">
+                <div id="k_box_book_comment_title">
+                    Titre du commentaire
+                </div>
+                <div id="k_box_book_comment_msg">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec venenatis urna, at viverra erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue sagittis, ultrices justo sodales, accumsan ligula. Maecenas maximus nisi dui, sit amet finibus magna blandit sit amet. Morbi facilisis aliquam erat quis eleifend. Donec aliquam magna id est pretium fringilla. Sed ac aliquam erat. Nunc eu risus ac tortor accumsan commodo.
+
+                    Curabitur vitae rhoncus mauris. Integer mollis eget est id tincidunt. Proin justo nisl, gravida at vestibulum ut, bibendum nec tellus. Suspendisse ut consectetur libero. Donec ullamcorper magna porttitor felis congue, vel eleifend odio imperdiet. Nulla tincidunt aliquet leo, nec congue diam egestas in. Donec a odio fringilla, porta leo eget, consectetur odio. Praesent volutpat mi vel gravida laoreet. Quisque sollicitudin mi a mauris auctor, non sagittis nisl mollis. Quisque orci risus, tristique id tincidunt eget, laoreet non tellus. Maecenas at eros at erat accumsan hendrerit id eget nisi. Praesent eget arcu eleifend, dictum tellus vitae, condimentum augue. Etiam cursus gravida odio vestibulum viverra. Nulla vel libero vel ante lobortis egestas.
+                </div>
+                <div id="k_box_book_comment_details">
+                    <label class="k_left">Note : 3/5</label>
+                    <label class="k_right">Envoyé le 24/2/2019 par Anon39570</label>
+                </div>
+            </div>
+            <!-- comment example -->
+            <div id="k_box_book_comment">
+                <div id="k_box_book_comment_title">
+                    Titre du commentaire
+                </div>
+                <div id="k_box_book_comment_msg">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec venenatis urna, at viverra erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue sagittis, ultrices justo sodales, accumsan ligula. Maecenas maximus nisi dui, sit amet finibus magna blandit sit amet. Morbi facilisis aliquam erat quis eleifend. Donec aliquam magna id est pretium fringilla. Sed ac aliquam erat. Nunc eu risus ac tortor accumsan commodo.
+
+                    Curabitur vitae rhoncus mauris. Integer mollis eget est id tincidunt. Proin justo nisl, gravida at vestibulum ut, bibendum nec tellus. Suspendisse ut consectetur libero. Donec ullamcorper magna porttitor felis congue, vel eleifend odio imperdiet. Nulla tincidunt aliquet leo, nec congue diam egestas in. Donec a odio fringilla, porta leo eget, consectetur odio. Praesent volutpat mi vel gravida laoreet. Quisque sollicitudin mi a mauris auctor, non sagittis nisl mollis. Quisque orci risus, tristique id tincidunt eget, laoreet non tellus. Maecenas at eros at erat accumsan hendrerit id eget nisi. Praesent eget arcu eleifend, dictum tellus vitae, condimentum augue. Etiam cursus gravida odio vestibulum viverra. Nulla vel libero vel ante lobortis egestas.
+                </div>
+                <div id="k_box_book_comment_details">
+                    <label class="k_left">Note : 3/5</label>
+                    <label class="k_right">Envoyé le 24/2/2019 par Anon39570</label>
+                </div>
+            </div>
+            <!-- comment example -->
+            <div id="k_box_book_comment">
+                <div id="k_box_book_comment_title">
+                    Titre du commentaire
+                </div>
+                <div id="k_box_book_comment_msg">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec venenatis urna, at viverra erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue sagittis, ultrices justo sodales, accumsan ligula. Maecenas maximus nisi dui, sit amet finibus magna blandit sit amet. Morbi facilisis aliquam erat quis eleifend. Donec aliquam magna id est pretium fringilla. Sed ac aliquam erat. Nunc eu risus ac tortor accumsan commodo.
+
+                    Curabitur vitae rhoncus mauris. Integer mollis eget est id tincidunt. Proin justo nisl, gravida at vestibulum ut, bibendum nec tellus. Suspendisse ut consectetur libero. Donec ullamcorper magna porttitor felis congue, vel eleifend odio imperdiet. Nulla tincidunt aliquet leo, nec congue diam egestas in. Donec a odio fringilla, porta leo eget, consectetur odio. Praesent volutpat mi vel gravida laoreet. Quisque sollicitudin mi a mauris auctor, non sagittis nisl mollis. Quisque orci risus, tristique id tincidunt eget, laoreet non tellus. Maecenas at eros at erat accumsan hendrerit id eget nisi. Praesent eget arcu eleifend, dictum tellus vitae, condimentum augue. Etiam cursus gravida odio vestibulum viverra. Nulla vel libero vel ante lobortis egestas.
+                </div>
+                <div id="k_box_book_comment_details">
+                    <label class="k_left">Note : 3/5</label>
+                    <label class="k_right">Envoyé le 24/2/2019 par Anon39570</label>
+                </div>
+            </div>
+        </div>
     </div>
 
 </body>
