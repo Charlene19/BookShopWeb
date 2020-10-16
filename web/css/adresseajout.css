@@ -1,0 +1,35 @@
+.div1{
+ background-color: hsl(200, 25%, 92%);
+ text-align: center;
+ padding:20px;
+ margin-bottom:20px;
+ font-size: 30px;
+ font-weight:bold;    
+}
+.div2{
+    
+    padding: 10px;
+    text-align: center;
+    align-items: stretch;
+    background-color:hsl(200, 25%, 92%);
+}
+#div3{
+    flex-grow: 1;
+}
+
+form{
+    position: relative;
+    margin:auto auto;
+    
+}
+
+.button {
+    border: 1px solid black;
+    width: 12%;
+    padding: 10px;
+    background-color:hsl(100, 15%, 100%);
+    font-size: 25px;
+    font-weight: bolder;
+    
+}
+

@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Recherche avancee</title>
+      <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+           <link rel="stylesheet" type="text/css"   href="bouton.css" >
+            <link rel="stylesheet" type="text/css" href="css/templatecss.css"/>
+    </head>
+    <body>
+       
+        <form style="margin-left:10px" id="bor" action="/advSearchServlet" method="GET">
+
+            par Titre : <input type="text" name="title" value />
+            <br></br>
+            par ISBN : <input type="text" name="isbn" value />
+            <br></br>
+            par Categorie : <select name="category">
+                <option value="category">categorie</option>
+                <option value="categorie_A">categorie_A</option>
+                <option value="categorie_B">categorie_B</option>
+                <option value="categorie_C">categorie_C</option>
+                <option value="categorie_A_0">categorie_A_0</option>
+                <option value="categorie_A_1">categorie_A_1</option>
+                <option value="categorie_A_2">categorie_A_2</option>
+                <option value="categorie_B_0">categorie_B_0</option>
+                <option value="categorie_B_1">categorie_B_1</option>
+                <option value="categorie_B_2">categorie_B_2</option>
+                
+            </select>
+            <br></br>
+            par Mot-Clefs : <input type="text" name="keywords" value />
+            <br></br>
+           
+            Article remise <input type="radio" name="remise" value />
+            <br></br>
+            <!-- <input class="bttn-unite" value="Rechercher" /> -->
+            
+            <button class="bttn-unite" type="submit" >Rechercher
+                
+            </button>
+            <br></br>
+        </form>
+
+    </body>
+</html>
+

@@ -1,16 +1,255 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
+
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/default.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet"  type="text/css"  href="bouton.css" />
+        <!-- Copy it to head of page -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+       <script data-require="jquery@*" data-semver="2.2.0" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <link data-require="fontawesome@*" data-semver="4.5.0" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    
+    
     </head>
+
     <body>
-        <div>TODO write content</div>
+
+        
+<div class="k_box_page_content" id="k_box_book_page_content">
+
+            <!-- page title container -->
+            <div class="k_box_page_title">
+                Fiche du livre
+            </div>
+
+            <div id="k_box_book_content">
+
+                <div id="k_box_book_image">
+
+                    <img src="img/0.jpg" />
+                    <form action="/shopping_cart.html" method="get">
+
+                        <!-- This button could be disabled if the book is already in the shopping cart
+                            and change its label too -->
+                        <button class="bttn-unite" type="submit" name="action" value="add_book">Ajouter au panier</button>
+                        <input type="hidden" name="ref" value="4859789569" />
+                    </form>
+                </div>
+
+                <div id="k_box_book_info">
+
+                    <!-- title and subtitle container -->
+                    <div id="k_book_info_title">
+                        <label id="k_label_book_title">Java Programming</label><br>
+                        <label id="k_label_book_subtitle">
+                            Learn java programming. the absolute java for beginner guide
+                        </label>
+                    </div>
+
+                    <!-- author, publisher, summary etc -->
+                    <div id="k_box_book_details">
+
+                        <div id="k_box_book_plus">
+                            Auteur : Nom de l'auteur<br /><br />
+                            Editeur : Nom de l'editeur<br /><br />
+                            Categories : <br />
+                            c0, c1, c2<br />
+                            c3, c4, c5<br /><br />
+                            Mots-clés : <br />
+                            mc0, mc1, mc2<br />
+                            mc3, mc4, mc5<br />
+                        </div>
+
+                        <div id="k_book_info_summary">
+                            Resumé : <br />
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec venenatis urna, at viverra erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue sagittis, ultrices justo sodales, accumsan ligula. Maecenas maximus nisi dui, sit amet finibus magna blandit sit amet. Morbi facilisis aliquam erat quis eleifend. Donec aliquam magna id est pretium fringilla. Sed ac aliquam erat. Nunc eu risus ac tortor accumsan commodo.
+                        </div>
+                    </div>
+
+                    <div id="k_book_info_customer">
+                        <label id="k_label_book_price">Prix: 20.50€</label>
+                        <label id="k_label_book_stock">Quantité disponible: 56</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- book comments section -->
+            <div id="k_box_book_comments">
+
+ <!-- <jsp:useBean id="beanComment" scope="session" class="model.bean.beanComment" /> 
+
+       
+        <c:if test="${beanComment.authComment}" var="authorize" scope="session">
+           
+     
+                <div class="authoComment">
+                    <!-- title container 
+                    <div class="k_box_page_title">
+                        Commentaires
+                    </div>
+                    <!-- customer comment container 
+                    <div id="k_box_book_comment">
+
+                        <!-- method should be POST 
+                        <form action="/commentServlet" method="post">
+
+                            <div id="k_box_book_comment_title">
+                                Titre du commentaire :
+                                <input class="k_text_field" type="text" name="comment_title" />
+                            </div>
+
+                            <div id="k_box_book_comment_msg">
+                                Message :
+                                <textarea class="k_text_field" name="comment_msg" cols="50" rows="4"></textarea>
+                            </div>
+
+                            <input type="hidden" name="isbn" value="" />
+                            <input type="number" name="rating" id="rating-input" min="1" max="5" />
+  
+    
+    <div class="rating" role="optgroup">
+      <!-- in Rails just use 1.upto(5) 
+      <i class="fa fa-star-o fa-2x rating-star" id="rating-1" data-rating="1" tabindex="0" aria-label="Rate as one out of 5 stars" role="radio"></i>
+      <i class="fa fa-star-o fa-2x rating-star" id="rating-2" data-rating="2" tabindex="0" aria-label="Rate as two out of 5 stars" role="radio"></i>
+      <i class="fa fa-star-o fa-2x rating-star" id="rating-3" data-rating="3" tabindex="0" aria-label="Rate as three out of 5 stars" role="radio"></i>
+      <i class="fa fa-star-o fa-2x rating-star" id="rating-4" data-rating="4" tabindex="0" aria-label="Rate as four out of 5 stars" role="radio"></i>
+      <i class="fa fa-star-o fa-2x rating-star" id="rating-5" data-rating="5" tabindex="0" aria-label="Rate as five out of 5 stars" role="radio"></i>
+    </div>
+                            <script>
+                                
+                                $(document).ready(function () {
+  
+  function setRating(rating) {
+    $('#rating-input').val(rating);
+    // fill all the stars assigning the '.selected' class
+    $('.rating-star').removeClass('fa-star-o').addClass('selected');
+    // empty all the stars to the right of the mouse
+    $('.rating-star#rating-' + rating + ' ~ .rating-star').removeClass('selected').addClass('fa-star-o');
+  }
+  
+  $('.rating-star')
+  .on('mouseover', function(e) {
+    var rating = $(e.target).data('rating');
+    // fill all the stars
+    $('.rating-star').removeClass('fa-star-o').addClass('fa-star');
+    // empty all the stars to the right of the mouse
+    $('.rating-star#rating-' + rating + ' ~ .rating-star').removeClass('fa-star').addClass('fa-star-o');
+  })
+  .on('mouseleave', function (e) {
+    // empty all the stars except those with class .selected
+    $('.rating-star').removeClass('fa-star').addClass('fa-star-o');
+  })
+  .on('click', function(e) {
+    var rating = $(e.target).data('rating');
+    setRating(rating);
+  })
+  .on('keyup', function(e){
+    // if spacebar is pressed while selecting a star
+    if (e.keyCode === 32) {
+      // set rating (same as clicking on the star)
+      var rating = $(e.target).data('rating');
+      setRating(rating);
+    }
+  });
+});
+                            </script>
+                            
+                              <div class="k_right">
+                                    <button class="bttn-unite" id="buttonnew" type="submit" name="action" value="send_comment">Envoyer le commentaire</button>
+                                </div>
+                        </form>
+
+                            </div>
+                    </div>
+               
+          
+   </c:if>
+   </div> -->
+                <!-- comment container -->
+                <!-- comment example -->
+                <div id="k_box_book_comment">
+                    <div id="k_box_book_comment_title">
+                        Titre du commentaire
+                    </div>
+                    <div id="k_box_book_comment_msg">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec venenatis urna, at viverra erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue sagittis, ultrices justo sodales, accumsan ligula. Maecenas maximus nisi dui, sit amet finibus magna blandit sit amet. Morbi facilisis aliquam erat quis eleifend. Donec aliquam magna id est pretium fringilla. Sed ac aliquam erat. Nunc eu risus ac tortor accumsan commodo.
+
+                        Curabitur vitae rhoncus mauris. Integer mollis eget est id tincidunt. Proin justo nisl, gravida at vestibulum ut, bibendum nec tellus. Suspendisse ut consectetur libero. Donec ullamcorper magna porttitor felis congue, vel eleifend odio imperdiet. Nulla tincidunt aliquet leo, nec congue diam egestas in. Donec a odio fringilla, porta leo eget, consectetur odio. Praesent volutpat mi vel gravida laoreet. Quisque sollicitudin mi a mauris auctor, non sagittis nisl mollis. Quisque orci risus, tristique id tincidunt eget, laoreet non tellus. Maecenas at eros at erat accumsan hendrerit id eget nisi. Praesent eget arcu eleifend, dictum tellus vitae, condimentum augue. Etiam cursus gravida odio vestibulum viverra. Nulla vel libero vel ante lobortis egestas.
+                    </div>
+                    <div id="k_box_book_comment_details">
+                        <label class="k_left">Note : 3/5</label>
+                        <label class="k_right">Envoyé le 24/2/2019 par Anon39570</label>
+                    </div>
+                </div>
+                <!-- comment example -->
+                <div id="k_box_book_comment">
+                    <div id="k_box_book_comment_title">
+                        Titre du commentaire
+                    </div>
+                    <div id="k_box_book_comment_msg">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec venenatis urna, at viverra erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue sagittis, ultrices justo sodales, accumsan ligula. Maecenas maximus nisi dui, sit amet finibus magna blandit sit amet. Morbi facilisis aliquam erat quis eleifend. Donec aliquam magna id est pretium fringilla. Sed ac aliquam erat. Nunc eu risus ac tortor accumsan commodo.
+
+                        Curabitur vitae rhoncus mauris. Integer mollis eget est id tincidunt. Proin justo nisl, gravida at vestibulum ut, bibendum nec tellus. Suspendisse ut consectetur libero. Donec ullamcorper magna porttitor felis congue, vel eleifend odio imperdiet. Nulla tincidunt aliquet leo, nec congue diam egestas in. Donec a odio fringilla, porta leo eget, consectetur odio. Praesent volutpat mi vel gravida laoreet. Quisque sollicitudin mi a mauris auctor, non sagittis nisl mollis. Quisque orci risus, tristique id tincidunt eget, laoreet non tellus. Maecenas at eros at erat accumsan hendrerit id eget nisi. Praesent eget arcu eleifend, dictum tellus vitae, condimentum augue. Etiam cursus gravida odio vestibulum viverra. Nulla vel libero vel ante lobortis egestas.
+                    </div>
+                    <div id="k_box_book_comment_details">
+                        <label class="k_left">Note : 3/5</label>
+                        <label class="k_right">Envoyé le 24/2/2019 par Anon39570</label>
+                    </div>
+                </div>
+                <!-- comment example -->
+                <div id="k_box_book_comment">
+                    <div id="k_box_book_comment_title">
+                        Titre du commentaire
+                    </div>
+                    <div id="k_box_book_comment_msg">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec venenatis urna, at viverra erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue sagittis, ultrices justo sodales, accumsan ligula. Maecenas maximus nisi dui, sit amet finibus magna blandit sit amet. Morbi facilisis aliquam erat quis eleifend. Donec aliquam magna id est pretium fringilla. Sed ac aliquam erat. Nunc eu risus ac tortor accumsan commodo.
+
+                        Curabitur vitae rhoncus mauris. Integer mollis eget est id tincidunt. Proin justo nisl, gravida at vestibulum ut, bibendum nec tellus. Suspendisse ut consectetur libero. Donec ullamcorper magna porttitor felis congue, vel eleifend odio imperdiet. Nulla tincidunt aliquet leo, nec congue diam egestas in. Donec a odio fringilla, porta leo eget, consectetur odio. Praesent volutpat mi vel gravida laoreet. Quisque sollicitudin mi a mauris auctor, non sagittis nisl mollis. Quisque orci risus, tristique id tincidunt eget, laoreet non tellus. Maecenas at eros at erat accumsan hendrerit id eget nisi. Praesent eget arcu eleifend, dictum tellus vitae, condimentum augue. Etiam cursus gravida odio vestibulum viverra. Nulla vel libero vel ante lobortis egestas.
+                    </div>
+                    <div id="k_box_book_comment_details">
+                        <label class="k_left">Note : 3/5</label>
+                        <label class="k_right">Envoyé le 24/2/2019 par Anon39570</label>
+                    </div>
+                </div>
+                <!-- comment example -->
+                <div id="k_box_book_comment">
+                    <div id="k_box_book_comment_title">
+                        Titre du commentaire
+                    </div>
+                    <div id="k_box_book_comment_msg">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec venenatis urna, at viverra erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue sagittis, ultrices justo sodales, accumsan ligula. Maecenas maximus nisi dui, sit amet finibus magna blandit sit amet. Morbi facilisis aliquam erat quis eleifend. Donec aliquam magna id est pretium fringilla. Sed ac aliquam erat. Nunc eu risus ac tortor accumsan commodo.
+
+                        Curabitur vitae rhoncus mauris. Integer mollis eget est id tincidunt. Proin justo nisl, gravida at vestibulum ut, bibendum nec tellus. Suspendisse ut consectetur libero. Donec ullamcorper magna porttitor felis congue, vel eleifend odio imperdiet. Nulla tincidunt aliquet leo, nec congue diam egestas in. Donec a odio fringilla, porta leo eget, consectetur odio. Praesent volutpat mi vel gravida laoreet. Quisque sollicitudin mi a mauris auctor, non sagittis nisl mollis. Quisque orci risus, tristique id tincidunt eget, laoreet non tellus. Maecenas at eros at erat accumsan hendrerit id eget nisi. Praesent eget arcu eleifend, dictum tellus vitae, condimentum augue. Etiam cursus gravida odio vestibulum viverra. Nulla vel libero vel ante lobortis egestas.
+                    </div>
+                    <div id="k_box_book_comment_details">
+                        <label class="k_left">Note : 3/5</label>
+                        <label class="k_right">Envoyé le 24/2/2019 par Anon39570</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script type="text/javascript">
+function remplirInput() {         
+  var zone = document.getElementById("zone");   
+  //var texte = zone.texte;
+  var texte = zone.value;
+  //alert(texte);
+  document.getElementById('t').value = texte;      
+}
+</script>
+
+<textarea id="zone" name="zone">test</textarea><br />
+<input type="button" class="bttn-unite" onclick="remplirInput();" /><br />
+<textarea id="t" name="t"></textarea><br />
+</body>
+
     </body>
+
 </html>

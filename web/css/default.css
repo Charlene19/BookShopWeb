@@ -1,0 +1,384 @@
+:root {
+
+    /* Bookshop's logo colors */
+    --k_logo_color_orange: #f69220;
+    --k_logo_color_light_blue: #1cabcb;
+    --k_logo_color_dark_blue: #087fb7;
+
+    /* Main bg color used in the the template */
+    --k_main_bg_color: hsl(200, 25%, 92%);
+
+    --k_main_button_color: hsl(100, 15%, 100%);
+    --k_info_text_color: var(--k_logo_color_light_blue);
+    --k_error_text_color: crimson;
+    --k_input_hover_color: var(--k_logo_color_orange);
+    --k_input_focus_color: white;
+    --k_default_border_radius: 3px;
+    --k_default_text_color: black;
+    --k_default_title_color: black;
+    --k_default_link_color: navy;
+}
+
+/*****************/
+/* Global stuffs */
+/*****************/
+.k_page_content {
+    background-color: var(--k_main_bg_color);
+}
+
+.k_box_page_content {
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+}
+
+.k_box_page_title {
+    font-weight: bold;
+    padding: 10px 10px;
+    font-size: 24px;
+    text-align: center;
+    color: var(--k_default_title_color);
+    background-color: var(--k_main_bg_color);
+    margin-bottom: 10px;
+}
+
+.k_input,
+.k_text_field,
+.k_button {
+    display: block;
+    margin: auto;
+    padding: 10px;
+    width: 80%;
+    border-radius: var(--k_default_border_radius);
+    outline: none;
+    border: none;
+}
+
+.k_button {
+    border: 1px solid black;
+}
+
+.k_input_number_select {
+    width: 50px;
+    height: 32px;
+    font-size: 32px;
+}
+
+.k_input:hover,
+.k_text_field:hover,
+.k_button:hover {
+    background-color: var(--k_input_hover_color);
+}
+
+.k_input:focus,
+.k_text_field:focus {
+    background-color: var(--k_input_focus_color);
+    border: 4px solid var(--k_logo_color_dark_blue);
+}
+
+.k_text_field {}
+
+.k_button {
+    width: 70%;
+    background-color: var(--k_main_button_color);
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.k_label,
+.k_label_left,
+.k_label_right {}
+
+.k_left {
+    float: left;
+}
+
+.k_right {
+    float: right;
+}
+
+.k_label_info {
+    font-size: 20px;
+    color: var(--k_info_text_color);
+}
+
+.k_label_error {
+    font-size: 16sp;
+    color: var(--k_error_text_color);
+}
+
+/** Table related **/
+.k_table_form {
+    width: 400px;
+    margin: 0 auto;
+    padding: 0px;
+    border-radius: var(--k_default_border_radius);
+    background-color: transparent;
+}
+
+.k_table_form th {
+    background-color: var(--k_default_bg_color);
+    color: var(--k_default_text_color);
+    padding: 8px;
+    font-size: 20px;
+    border-radius: var(--k_default_border_radius);
+    border: 4px solid white;
+}
+
+.k_table_form td {
+    margin: auto;
+    text-align: left;
+    text-indent: 10%;
+    font-size: 18px;
+    padding-top: 16px;
+    line-height: 100%;
+}
+
+/*********/
+/* Login */
+/*********/
+/************/
+/* Register */
+/************/
+/***********/
+/* Account */
+/***********/
+/******************************/
+/* Login / Register / Account */
+/******************************/
+.k_box_account {
+    display: flex;
+    padding: 10px;
+    text-align: center;
+    align-items: stretch;
+    background-color: var(--k_main_bg_color);
+}
+
+#k_box_account_title {
+    background-color: DodgerBlue;
+    color: red;
+    font-size: 26px;
+    padding: 10px 10px;
+}
+
+#k_box_account_content {
+    padding: 10px;
+}
+
+#k_box_account_create,
+#k_box_account_login {
+    flex-grow: 1;
+    background-color: var(--k_main_bg_color);
+    line-height: 75px;
+    font-size: 30px;
+}
+
+#k_box_account_details {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    text-align: left;
+    align-items: stretch;
+    background-color: var(--k_main_bg_color);
+}
+
+/*********************/
+/* Book details page */
+/*********************/
+
+#k_box_book_page_content {}
+
+#k_box_book_content {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    flex-basis: calc(100vh / 2);
+    background-color: var(--k_main_bg_color);
+}
+
+#k_box_book_image {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    min-width: 400px;
+    background-color: var(--k_main_bg_color);
+    margin: 10px 10px;
+
+}
+
+#k_box_book_info {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    flex-grow: 10;
+    margin: 10px 10px;
+    background-color: var(--k_main_bg_color);
+}
+
+#k_book_info_title {
+    flex-grow: 1;
+    line-height: 100%;
+    font-size: 25px;
+    padding: 16px 16px;
+    background-color: var(--k_logo_color_light_blue);
+}
+
+#k_box_book_details {
+    display: flex;
+    padding: 16px 16px;
+    align-items: stretch;
+    flex-direction: row;
+    height: 100%;
+}
+
+#k_label_book_title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#k_label_book_subtitle {
+    width: 100%;
+    font-size: 18px;
+}
+
+#k_label_book_isbn {
+    width: 100%;
+    font-size: 200px;
+}
+
+#k_box_book_plus {
+    min-width: 50%;
+    font-size: 20px;
+}
+
+#k_book_info_summary {
+    min-width: 50%;
+    font-size: 18px;
+}
+
+#k_book_info_customer {
+    font-size: 20px;
+    background-color: var(--k_logo_color_light_blue);
+    padding: 16px 16px;
+}
+
+#k_label_book_price {
+    float: left;
+    font-size: 35px;
+}
+
+#k_label_book_stock {
+    float: right;
+    font-size: 35px;
+}
+
+#k_box_book_comments {
+    display: flex;
+    margin-top: 8px;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+}
+
+#k_box_book_comment {
+    padding: 16px 16px;
+    display: flex;
+    background-color: var(--k_main_bg_color);
+    flex-direction: column;
+    margin-bottom: 32px;
+}
+
+#k_box_book_comment_title {
+    border: 4px solid white;
+    font-size: 24px;
+    padding: 16px 16px;
+    background-color: var(--k_logo_color_light_blue);
+}
+
+#k_box_book_comment_msg {
+    border: 4px solid white;
+    font-size: 18px;
+    padding: 16px 16px;
+    background-color: var(--k_main_bg_color);
+
+}
+
+#k_box_book_comment_details {
+    border: 4px solid white;
+    font-size: 24px;
+    padding: 16px 16px;
+    background-color: var(--k_logo_color_dark_blue);
+}
+
+/**********************/
+/* Shopping cart page */
+/**********************/
+#k_box_shopping_cart_content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+    align-items: stretch;
+    background-color: var(--k_main_bg_color);
+}
+
+#k_box_shopping_cart_empty {
+    color: var(--k_error_text_color);
+}
+
+#k_table_form_shopping_cart {
+    width: 100%;
+}
+
+#k_table_form_shopping_cart th {
+    
+}
+
+#k_table_form_shopping_cart td {
+    padding: 4px 8px;
+    border: 1px solid white;
+}
+
+#k_table_form_shopping_cart tr {
+    
+}
+
+#k_box_shopping_cart_actions {
+    display: flex;
+    flex-direction: row;
+}
+
+#k_box_shopping_cart_clear {
+    width: 50%;
+    padding: 16px 40px;
+    background-color: var(--k_main_bg_color);
+}
+
+#k_box_shopping_cart_order {
+    width: 50%;
+    padding: 16px 40px;
+    background-color: var(--k_main_bg_color);
+}
+/***********/
+/* Account */
+/***********/
+#k_box_order_validation_content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+    align-items: stretch;
+    background-color: var(--k_main_bg_color);
+}
+
+#k_box_order_validation_total {
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    padding: 10px;
+    text-align: center;
+    align-items: stretch;
+    background-color: var(--k_main_bg_color);
+}
+
+
